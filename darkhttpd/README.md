@@ -44,16 +44,16 @@ services:
 ##  协议
 - [MIT][link.license]
 
-[icon.license]:            https://img.shields.io/github/license/kimi360/dockerfiles
+[icon.license]:            https://img.shields.io/github/license/kimi360/Dockerfiles
 [icon.darkhttpd]:          https://img.shields.io/github/v/release/emikulic/darkhttpd?label=darkhttpd
 [icon.docker.size]:        https://img.shields.io/docker/image-size/kimi360/darkhttpd/latest?color=yellow
 [icon.docker.pull]:        https://img.shields.io/docker/pulls/kimi360/darkhttpd?color=orange
 
-[link.license]:            https://github.com/kimi360/dockerfiles/blob/main/LICENSE
+[link.license]:            https://github.com/kimi360/Dockerfiles/blob/main/LICENSE
 [link.darkhttpd.version]:  https://github.com/emikulic/darkhttpd/releases
 [link.docker.page]:        https://hub.docker.com/r/kimi360/darkhttpd
 [link.docker.tags]:        https://hub.docker.com/r/kimi360/darkhttpd/tags
 
 [darkhttpd]:               https://github.com/emikulic/darkhttpd
 [scratch]:                 https://hub.docker.com/_/scratch
-[dockerfile]:              https://github.com/kimi360/dockerfiles/blob/main/darkhttpd/Dockerfile
+[dockerfile]:              https://github.com/kimi360/Dockerfiles/blob/main/darkhttpd/Dockerfile
