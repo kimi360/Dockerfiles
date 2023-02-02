@@ -1,0 +1,83 @@
+name: 【Docker】 Build ariang
+on:
+  schedule:
+    - cron: '0 16 * * *'
+  push:
+    paths: [ "ariang/Dockerfile",".github/workflows/build_ariang.yml" ]
+  pull_request:
+    paths: [ "ariang/Dockerfile",".github/workflows/build_ariang.yml" ]
+  workflow_dispatch: ~
+
+jobs:
+  Build_Docker:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout 
+      uses: actions/checkout@v3
+
+    - name: Set up QEMU
+      uses: docker/setup-qemu-action@v2
+      
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v2
+      
+    - name: Get AriaNG version
+      id: get_version
+      run: |
+        URL=https://api.github.com/repos/mayswind/AriaNg/releases/latest
+        echo "version=$(curl -s ${URL} | grep tag_name | head -n 1 | awk -F '"' '{print $4}'| sed 's#v##')" >> $GITHUB_OUTPUT
+    - name: Get AriaNG
+      run: |
+        git clone https://github.com/mayswind/AriaNg-DailyBuild ./ariang/src
+        rm -rfv ./ariang/src/.git
+        rm -rfv ./ariang/src/LICENSE
+        
+    - name: Cache Docker layers
+      uses: actions/cache@v3.2.4
+      with:
+        path: /tmp/.buildx-cache
+        key: ariang-${{ runner.os }}-buildx-${{ github.sha }}
+        restore-keys: |
+          ariang-${{ runner.os }}-buildx-
+          
+    - name: Login to DockerHub
+      uses: docker/login-action@v2
+      with:
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_TOKEN }}
+
+    - name: Extract Docker metadata
+      id: meta
+      uses: docker/metadata-action@v4
+      with:
+        images: ${{ secrets.DOCKER_USERNAME }}/ariang
+        tags: |
+          type=raw,value=${{ steps.get_version.outputs.version }},enable=true
+          type=raw,value=latest,enable=true
+        labels: |
+          org.opencontainers.image.author=KIMI360
+          org.opencontainers.image.description=AriaNg is a modern web frontend making aria2 easier to use.
+          org.opencontainers.image.licenses=MIT
+          org.opencontainers.image.source=https://github.com/mayswind/AriaNg
+          org.opencontainers.image.title=${{ secrets.DOCKER_USERNAME }}/ariang
+          org.opencontainers.image.url=https://github.com/kimi360/Dockerfiles
+          org.opencontainers.image.version=${{ steps.get_version.outputs.version }}
+          org.opencontainers.image.docker.cmd=docker run -p 80:80 -d kimi360/ariang:latest
+        flavor: latest=false     
+
+    - name: Build and push Docker image
+      uses: docker/build-push-action@v4
+      with:
+        context: ./ariang/
+        push: true
+        tags: ${{ steps.meta.outputs.tags }}
+        labels: ${{ steps.meta.outputs.labels }}
+        platforms: |
+            linux/386
+            linux/amd64
+            linux/arm/v6
+            linux/arm/v7
+            linux/arm64
+        cache-from: type=local,src=/tmp/.buildx-cache
+        cache-to: type=local,dest=/tmp/.buildx-cache
