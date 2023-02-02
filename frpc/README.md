@@ -22,7 +22,6 @@ docker run -d \
   --name frpc \
   --restart unless-stopped \
   -v ~/frpc.ini:/frp/frpc.ini \
-  -p 7000:7000 \
   kimi360/frpc:latest
 ```
 
@@ -36,8 +35,6 @@ services:
     image: kimi360/frpc:latest
     container_name: frpc
     restart: unless-stopped
-    ports:
-      - 7000:7000
     volumes:
       - ~/frpc.ini:/frp/frpc.ini
 ```
