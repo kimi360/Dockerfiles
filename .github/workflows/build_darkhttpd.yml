@@ -61,7 +61,7 @@ jobs:
           org.opencontainers.image.licenses=MIT
           org.opencontainers.image.source=https://github.com/emikulic/darkhttpd
           org.opencontainers.image.title=${{ secrets.DOCKER_USERNAME }}/darkhttpd
-          org.opencontainers.image.url=https://github.com/kimi360/dockerfiles
+          org.opencontainers.image.url=https://github.com/kimi360/Dockerfiles
           org.opencontainers.image.version=${{ steps.get_version.outputs.version }}
           org.opencontainers.image.docker.cmd=docker run -p 80:80 -v ~/website:/var/www/htdocs:ro -d kimi360/darkhttpd:latest
         flavor: latest=false     
