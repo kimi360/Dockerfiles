@@ -10,7 +10,7 @@ FROM alpine:3.17.1 AS build
 WORKDIR /apps
 
 # Get AriaNG from github action
-COPY ./ariang ./ariang
+COPY ./src ./ariang
 
 # Get darkhttpd from docker
 RUN mkdir -p /apps/etc
