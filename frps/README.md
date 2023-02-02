@@ -4,7 +4,7 @@
 [![icon][icon.docker.size]][link.docker.tags]
 [![icon][icon.docker.pull]][link.docker.page]
 
-🍌 基于scratch构建的frps镜像
+🍌 基于 [scratch] 构建的 [frps][frp] 镜像
 ##  简介
 [frp] 是一个专注于内网穿透的高性能的反向代理应用，支持 TCP、UDP、HTTP、HTTPS 等多种协议。可以将内网服务以安全、便捷的方式通过具有公网 IP 节点的中转暴露到公网。
 
