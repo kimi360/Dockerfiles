@@ -23,3 +23,11 @@ updates:
       time: '22:00'
     labels:
       - dependencies
+
+  - package-ecosystem: "docker"
+    directory: 'frpc/'
+    schedule:
+      interval: "daily"
+      time: '22:00'
+    labels:
+      - dependencies
