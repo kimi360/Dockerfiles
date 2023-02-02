@@ -12,7 +12,7 @@
 
 ##  说明
 - 基于 [scratch] 镜像构建体积超小。
-- 点击连接查看 [Dockerfile][dockerfile] 。
+- 查看 [Dockerfile][dockerfile] 。
 
 ##  使用
 ###  快速开始
