@@ -7,6 +7,7 @@
 ## 列表
 - [darkhttpd]
 - [frps]
+- [frpc]
 
 ##  引用
 - [emikulic/darkhttpd][link.darkhttpd]
@@ -21,3 +22,4 @@
 [link.frp]:                https://github.com/fatedier/frp
 [darkhttpd]:               https://github.com/kimi360/Dockerfiles/tree/main/darkhttpd
 [frps]:                    https://github.com/kimi360/Dockerfiles/tree/main/frps
+[frpc]:                    https://github.com/kimi360/Dockerfiles/tree/main/frpc
