@@ -60,5 +60,5 @@ services:
 
 [frp]:                     https://github.com/fatedier/frp
 [scratch]:                 https://hub.docker.com/_/scratch
-[dockerfile]:              https://github.com/kimi360/Dockerfiles/blob/frpc/frps/Dockerfile
+[dockerfile]:              https://github.com/kimi360/Dockerfiles/blob/main/frps/Dockerfile
 
