@@ -7,6 +7,14 @@ updates:
       time: '22:00'
     labels:
       - dependencies
+      
+  - package-ecosystem: "docker"
+    directory: 'ariang/'
+    schedule:
+      interval: "daily"
+      time: '22:00'
+    labels:
+      - dependencies
 
   - package-ecosystem: "docker"
     directory: 'darkhttpd/'
