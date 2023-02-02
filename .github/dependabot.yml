@@ -15,3 +15,11 @@ updates:
       time: '22:00'
     labels:
       - dependencies
+
+  - package-ecosystem: "docker"
+    directory: 'frps/'
+    schedule:
+      interval: "daily"
+      time: '22:00'
+    labels:
+      - dependencies
