@@ -35,6 +35,11 @@ services:
     ports:
       - 80:3300
 ```
+##  截图
+###  浅色主题
+![screenshots][screenshots.light]
+###  深色主题
+![screenshots][screenshots.dark]
 
 ## 引用
 - [XGHeaven/homebox][homebox]
@@ -51,6 +56,9 @@ services:
 [link.homebox.version]:    https://github.com/XGHeaven/homebox/releases
 [link.docker.page]:        https://hub.docker.com/r/kimi360/homebox
 [link.docker.tags]:        https://hub.docker.com/r/kimi360/homebox/tags
+
+[screenshots.light]:       https://github.com/XGHeaven/homebox/raw/master/doc/light-theme.png
+[screenshots.dark]:        https://github.com/XGHeaven/homebox/raw/master/doc/dark-theme.png
 
 [homebox]:                 https://github.com/XGHeaven/homebox
 [scratch]:                 https://hub.docker.com/_/scratch
