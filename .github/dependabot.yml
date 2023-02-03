@@ -39,3 +39,11 @@ updates:
       time: '22:00'
     labels:
       - dependencies
+      
+  - package-ecosystem: "docker"
+    directory: 'homebox/'
+    schedule:
+      interval: "daily"
+      time: '22:00'
+    labels:
+      - dependencies
