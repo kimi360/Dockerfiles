@@ -9,11 +9,13 @@
 - [darkhttpd]
 - [frps]
 - [frpc]
+- [homebox]
 
 ##  引用
 - [mayswind/AriaNg][link.ariang]
 - [emikulic/darkhttpd][link.darkhttpd]
 - [fatedier/frp][link.frp]
+- [XGHeaven/homebox][link.homebox]
 
 ## 协议
 - [MIT][link.license]
@@ -23,7 +25,10 @@
 [link.ariang]:             https://github.com/mayswind/AriaNg
 [link.darkhttpd]:          https://github.com/emikulic/darkhttpd
 [link.frp]:                https://github.com/fatedier/frp
+[link.homebox]:            https://github.com/XGHeaven/homebox
+
 [ariang]:                  https://github.com/kimi360/Dockerfiles/tree/main/ariang
 [darkhttpd]:               https://github.com/kimi360/Dockerfiles/tree/main/darkhttpd
 [frps]:                    https://github.com/kimi360/Dockerfiles/tree/main/frps
 [frpc]:                    https://github.com/kimi360/Dockerfiles/tree/main/frpc
+[homebox]:                 https://github.com/kimi360/Dockerfiles/tree/main/homebox
