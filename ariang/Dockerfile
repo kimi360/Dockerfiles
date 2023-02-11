@@ -5,7 +5,7 @@
 # https://github.com/mayswind/AriaNg-DailyBuild
 
 # Build environment
-FROM alpine:3.17.1 AS build 
+FROM alpine:3.17.2 AS build 
   
 WORKDIR /apps
 
