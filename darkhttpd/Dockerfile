@@ -4,7 +4,7 @@
 # https://github.com/emikulic/darkhttpd
 
 # Build environment
-FROM alpine:3.17.1 AS build 
+FROM alpine:3.17.2 AS build 
 
 RUN apk add --no-cache \
   build-base=~0.5
