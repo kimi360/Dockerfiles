@@ -34,7 +34,7 @@ jobs:
         rm -rfv ./ariang/src/LICENSE
         
     - name: Cache Docker layers
-      uses: actions/cache@v3.2.6
+      uses: actions/cache@v3.3.0
       with:
         path: /tmp/.buildx-cache
         key: ariang-${{ runner.os }}-buildx-${{ github.sha }}
