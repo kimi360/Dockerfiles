@@ -4,7 +4,7 @@
 # https://github.com/fatedier/frp
 
 # Build environment
-FROM alpine:3.18.3 AS build 
+FROM alpine:3.18.4 AS build 
 ARG TARGETOS
 ARG TARGETARCH
 ARG FRP_VERSION
