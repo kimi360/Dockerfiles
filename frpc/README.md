@@ -21,7 +21,7 @@
 docker run -d \
   --name frpc \
   --restart unless-stopped \
-  -v ~/frpc.ini:/frp/frpc.ini \
+  -v ~/frpc.toml:/frp/frpc.toml \
   kimi360/frpc:latest
 ```
 
@@ -36,7 +36,7 @@ services:
     container_name: frpc
     restart: unless-stopped
     volumes:
-      - ~/frpc.ini:/frp/frpc.ini
+      - ~/frpc.toml:/frp/frpc.toml
 ```
 
 ## 引用

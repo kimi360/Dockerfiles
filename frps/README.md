@@ -21,7 +21,7 @@
 docker run -d \
   --name frps \
   --restart unless-stopped \
-  -v ~/frps.ini:/frp/frps.ini \
+  -v ~/frps.toml:/frp/frps.toml \
   -p 7000:7000 \
   kimi360/frps:latest
 ```
@@ -39,7 +39,7 @@ services:
     ports:
       - 7000:7000
     volumes:
-      - ~/frps.ini:/frp/frps.ini
+      - ~/frps.toml:/frp/frps.toml
 ```
 
 ## 引用
