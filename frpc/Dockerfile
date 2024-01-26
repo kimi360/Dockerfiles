@@ -16,9 +16,9 @@ RUN mkdir -p /frp \
  && wget --no-check-certificate --no-verbose -c "${FRP_URL}" \
  && tar zxvf "${FRP_PACKAGE}".tar.gz \
  && mv "${FRP_PACKAGE}"/frpc     /frp/frpc \
- && mv "${FRP_PACKAGE}"/frpc.ini /frp/frpc.ini
+ && mv "${FRP_PACKAGE}"/frpc.toml /frp/frpc.toml
 
 FROM scratch
 LABEL maintainer="KIMI360 <https://github.com/kimi360>"
 COPY --from=build --chown=0:0 /frp /frp
-ENTRYPOINT ["/frp/frpc","-c","/frp/frpc.ini"]
+ENTRYPOINT ["/frp/frpc","-c","/frp/frpc.toml"]

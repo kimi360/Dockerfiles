@@ -58,7 +58,7 @@ jobs:
           org.opencontainers.image.title=${{ secrets.DOCKER_USERNAME }}/frpc
           org.opencontainers.image.url=https://github.com/kimi360/Dockerfiles
           org.opencontainers.image.version=${{ steps.get_version.outputs.version }}
-          org.opencontainers.image.docker.cmd=docker run -v ~/frpc.ini:/frp/frpc.ini -d kimi360/frpc:latest
+          org.opencontainers.image.docker.cmd=docker run -v ~/frpc.toml:/frp/frpc.toml -d kimi360/frpc:latest
         flavor: latest=false     
 
     - name: Build and push Docker image
