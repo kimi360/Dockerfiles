@@ -58,7 +58,7 @@ jobs:
           org.opencontainers.image.title=${{ secrets.DOCKER_USERNAME }}/frps
           org.opencontainers.image.url=https://github.com/kimi360/Dockerfiles
           org.opencontainers.image.version=${{ steps.get_version.outputs.version }}
-          org.opencontainers.image.docker.cmd=docker run -p 7000:7000 -v ~/frps.ini:/frp/frps.ini -d kimi360/frps:latest
+          org.opencontainers.image.docker.cmd=docker run -p 7000:7000 -v ~/frps.toml:/frp/frps.toml -d kimi360/frps:latest
         flavor: latest=false     
 
     - name: Build and push Docker image
@@ -70,10 +70,8 @@ jobs:
         tags: ${{ steps.meta.outputs.tags }}
         labels: ${{ steps.meta.outputs.labels }}
         platforms: |
-            linux/386
             linux/amd64
-            linux/arm/v6
-            linux/arm/v7
+            linux/arm
             linux/arm64
         cache-from: type=local,src=/tmp/.buildx-cache
         cache-to: type=local,dest=/tmp/.buildx-cache

@@ -16,10 +16,10 @@ RUN mkdir -p /frp \
  && wget --no-check-certificate --no-verbose -c "${FRP_URL}" \
  && tar zxvf "${FRP_PACKAGE}".tar.gz \
  && mv "${FRP_PACKAGE}"/frps     /frp/frps \
- && mv "${FRP_PACKAGE}"/frps.ini /frp/frps.ini
+ && mv "${FRP_PACKAGE}"/frps.toml /frp/frps.toml
 
 FROM scratch
 LABEL maintainer="KIMI360 <https://github.com/kimi360>"
 COPY --from=build --chown=0:0 /frp /frp
 EXPOSE 7000
-ENTRYPOINT ["/frp/frps","-c","/frp/frps.ini"]
+ENTRYPOINT ["/frp/frps","-c","/frp/frps.toml"]
