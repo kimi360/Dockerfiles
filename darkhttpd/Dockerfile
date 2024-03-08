@@ -33,13 +33,13 @@ ENV CFLAGS=" \
 "
 
 # Make darkhttpd and collect files into apps folder
-RUN make  darkhttpd-static                \
- && strip darkhttpd-static                \
+RUN make  darkhttpd                       \
+ && strip darkhttpd                       \
  && mkdir -p /apps/etc                    \
  && mkdir -p /apps/var/www/htdocs         \
- && mv darkhttpd-static /apps/darkhttpd   \
- && mv passwd           /apps/etc         \
- && mv group            /apps/etc 
+ && mv darkhttpd /apps/darkhttpd          \
+ && mv docker/passwd /apps/etc            \
+ && mv docker/group  /apps/etc 
 
 FROM scratch
 LABEL maintainer="KIMI360 <https://github.com/kimi360>"
