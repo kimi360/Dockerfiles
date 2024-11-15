@@ -29,7 +29,7 @@ jobs:
         echo "version=$(curl -s ${URL} | grep tag_name | head -n 1 | awk -F '"' '{print $4}'| sed 's#v##')" >> $GITHUB_OUTPUT
         
     - name: Cache Docker layers
-      uses: actions/cache@v4.0.2
+      uses: actions/cache@v4.1.2
       with:
         path: /tmp/.buildx-cache
         key: frpc-${{ runner.os }}-buildx-${{ github.sha }}
