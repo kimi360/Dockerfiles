@@ -11,7 +11,7 @@ ARG HOMEBOX_VERSION
 
 WORKDIR /src
 RUN mkdir -p /homebox \
- && HOMEBOX_PACKAGE="server-${TARGETOS}-${TARGETARCH}" \
+ && HOMEBOX_PACKAGE="homebox-${TARGETOS}-${TARGETARCH}" \
  && HOMEBOX_URL="https://github.com/XGHeaven/homebox/releases/download/v${HOMEBOX_VERSION}/${HOMEBOX_PACKAGE}.tar.gz" \
  && wget --no-check-certificate --no-verbose -c "${HOMEBOX_URL}" \
  && tar zxvf "${HOMEBOX_PACKAGE}".tar.gz \
