@@ -21,6 +21,7 @@
 docker run -d \
   --name frpc \
   --restart unless-stopped \
+  --network host \
   -v ~/frpc.toml:/frp/frpc.toml \
   kimi360/frpc:latest
 ```
@@ -35,6 +36,7 @@ services:
     image: kimi360/frpc:latest
     container_name: frpc
     restart: unless-stopped
+    hostwork_mode: host
     volumes:
       - ~/frpc.toml:/frp/frpc.toml
 ```
