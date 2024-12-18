@@ -21,6 +21,7 @@
 docker run -d \
   --name frps \
   --restart unless-stopped \
+  --network host \
   -v ~/frps.toml:/frp/frps.toml \
   -p 7000:7000 \
   kimi360/frps:latest
@@ -36,8 +37,7 @@ services:
     image: kimi360/frps:latest
     container_name: frps
     restart: unless-stopped
-    ports:
-      - 7000:7000
+    network_mode: host
     volumes:
       - ~/frps.toml:/frp/frps.toml
 ```
