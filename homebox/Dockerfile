@@ -4,7 +4,7 @@
 # https://github.com/XGHeaven/homebox
 
 # Build environment
-FROM alpine:3.20.3 AS build 
+FROM alpine:3.21.1 AS build 
 ARG TARGETOS
 ARG TARGETARCH
 ARG HOMEBOX_VERSION
